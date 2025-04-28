@@ -11,11 +11,11 @@ impl Config {
 
         let query = match args.next() {
             Some(x) => x,
-            None => return Err("`query` not found!")
+            None => return Err("`query` not found!"),
         };
         let file_path = match args.next() {
             Some(y) => y,
-            None => return Err("`file_path` not found!")
+            None => return Err("`file_path` not found!"),
         };
         let ignore_case = match args.next() {
             Some(z) => {
@@ -24,10 +24,14 @@ impl Config {
                 } else {
                     false
                 }
-            },
-            None => false
+            }
+            None => false,
         };
 
-        Ok(Config{ query, file_path, ignore_case })
+        Ok(Config {
+            query,
+            file_path,
+            ignore_case,
+        })
     }
 }
